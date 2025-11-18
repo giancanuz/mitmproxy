@@ -1,0 +1,16 @@
+compiling from source (https://github.com/mitmproxy/mitmproxy/discussions/6068)
+entering venv by : "source ./venv/bin/activate"
+install all build dependency : ./venv/bin/pip install ".[dev]"
+build binary: "python release/build.py standalone-binaries" , with logging posted in my question above
+when running selftest.py , I can see all my logging
+unzip binary : "cd release/dist/;tar -xf mitmproxy-dev-macos.tar.gz"
+boot mitmdump : "./mitmdump -vvvv"
+
+i.e.:
+python -m venv venv
+source ./venv/bin/activate
+./venv/bin/pip install ".[dev]"
+python release/build.py standalone-binaries
+
+exit venv: 
+deactivate
