@@ -58,6 +58,11 @@ def parse_transfer_encoding(value: str | bytes) -> TransferEncoding:
         te = value.decode()
     te = te.lower()
     te = re.sub(r"[\t ]*,[\t ]*", ",", te)
+    # https://github.com/mitmproxy/mitmproxy/issues/5423
+    # This handles Headers which contain entries
+    # (b'transfer-encoding', b'chunked') and (b'Transfer-Encoding', b'chunked')
+    # which lead to te = 'chunked,chunked', hence raising a ValueError
+    te = ','.join(set(te.split(',')))
     if te not in _HTTP_1_1_TRANSFER_ENCODINGS:
         raise ValueError(f"unknown transfer-encoding header: {value!r}")
     return typing.cast(TransferEncoding, te)
