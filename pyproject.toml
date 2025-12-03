@@ -33,7 +33,7 @@ classifiers = [
 dependencies = [
     "aioquic>=1.2.0,<=1.2.0",
     "argon2-cffi>=23.1.0,<=25.1.0",
-    "asgiref>=3.2.10,<=3.10.0",
+    "asgiref>=3.2.10,<=3.11.0",
     "bcrypt>=5.0.0,<=5.0.0",
     "Brotli>=1.0,<=1.2.0",
     "certifi>=2019.9.11",  # no upper bound here to get latest CA bundle
@@ -55,16 +55,16 @@ dependencies = [
     "tornado>=6.5.0,<=6.5.2",
     "typing-extensions>=4.13.2,<=4.14; python_version < '3.13'",
     "urwid>=2.6.14,<=3.0.3",
-    "wsproto>=1.0,<=1.2.0",
+    "wsproto>=1.0,<=1.3.2",
     "publicsuffix2>=2.20190812,<=2.20191221",
     "zstandard>=0.25,<=0.25.0",
 ]
 
 [dependency-groups]
 dev = [
-    "click==8.3.0",
+    "click==8.3.1",
     "hypothesis==6.130.6",
-    "maturin==1.9.6",
+    "maturin==1.10.2",
     "pdoc==16.0.0",
     "pyinstaller==6.16.0",
     "pyinstaller-hooks-contrib==2025.9",
@@ -86,10 +86,10 @@ tox = [
     "tox-uv==1.29.0",
 ]
 ruff = [
-    "ruff==0.14.3",
+    "ruff==0.14.7",
 ]
 deploy = [
-    "awscli==1.42.64",
+    "awscli==1.43.6",
     "twine==6.2.0",
 ]
 
